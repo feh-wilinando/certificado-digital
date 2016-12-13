@@ -32,15 +32,6 @@ public class CompanyController {
     @Autowired
     private RecaptchaComponent recaptchaComponent;
 
-    @Autowired
-    private DuplicatedCompanyRegistrationValidator duplicatedCompanyRegistrationValidator;
-
-    @InitBinder
-    public void initCompanyForm(WebDataBinder webDataBinder){
-        webDataBinder.addValidators(duplicatedCompanyRegistrationValidator);
-    }
-
-
     @PostMapping("/form")
     public ModelAndView save(@Valid CompanyForm companyForm, BindingResult result, RedirectAttributes redirectAttributes) {
 

@@ -30,7 +30,7 @@ public class Address implements Serializable{
     @NotBlank
     private String city;
 
-    @NotNull
+    @NotBlank
     @Enumerated(EnumType.STRING)
     private State state;
 

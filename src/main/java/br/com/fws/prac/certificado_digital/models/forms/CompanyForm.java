@@ -3,6 +3,7 @@ package br.com.fws.prac.certificado_digital.models.forms;
 import br.com.fws.prac.certificado_digital.models.clients.Company;
 import br.com.fws.prac.certificado_digital.models.commons.Address;
 import br.com.fws.prac.certificado_digital.models.commons.Contact;
+import br.com.fws.prac.certificado_digital.validators.UniqueCompanyRegistration;
 import br.com.fws.prac.certificado_digital.validators.UseRecaptcha;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,9 +17,10 @@ import javax.validation.constraints.NotNull;
 /**
  * Created by nando on 10/12/16.
  */
-@UseRecaptcha
 @Data
 @NoArgsConstructor
+@UseRecaptcha
+@UniqueCompanyRegistration
 public class CompanyForm implements Form<Company>{
 
     private Long id;

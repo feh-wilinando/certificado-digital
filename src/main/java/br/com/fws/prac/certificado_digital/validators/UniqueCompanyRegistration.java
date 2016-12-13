@@ -8,19 +8,18 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Created by nando on 10/12/16.
+ * Created by nando on 13/12/16.
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-@Constraint(validatedBy = RecaptchaResponseValidator.class)
-public @interface UseRecaptcha {
+@Constraint(validatedBy = DuplicatedCompanyRegistrationValidator.class)
+public @interface UniqueCompanyRegistration {
 
-    String message() default "Não foi possível validar a captcha";
+    String message() default "CNPJ já cadastrado";
 
 
     Class<?>[] groups() default { };
 
     Class<? extends Payload>[] payload() default { };
-
 
 }

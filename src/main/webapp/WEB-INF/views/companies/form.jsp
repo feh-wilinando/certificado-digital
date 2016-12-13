@@ -127,6 +127,7 @@
                                 <form:select id="state" path="address.state" cssClass="selectpicker" data-size="3" data-live-search="true" title="Selecione um estado">
                                    <form:options/>
                                 </form:select>
+                                <form:errors cssClass="text-danger" path="address.state"/>
                             </div>
                             <div class="col-sm-2">
                                 <label for="zipCode">CEP</label>
@@ -205,6 +206,7 @@
                     <div class="row">
                         <div class="col-md-offset-3">
                             <div id="recaptcha" class="g-recaptcha" data-sitekey="${recaptchaPublicKey}"></div>
+                            <form:errors cssClass="text-danger" path=""/>
                         </div>
                     </div>
 
