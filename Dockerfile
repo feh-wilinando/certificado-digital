@@ -1,9 +1,11 @@
 FROM openjdk:8-jdk
 
-COPY target/certificado-digital.jar "/opt/certificado-digital.jar"
+MAINTAINER Fernando Furtado <feh.wilinando@gmail.com>
+
+COPY target/certificado-digital.war target/dependency/webapp-runner.jar "/opt/"
 
 EXPOSE 8080
 
 WORKDIR	"/opt"
 
-CMD ["java", "-jar", "-Dspring.profiles.active=prod", "certificado-digital.jar"]
+ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-Dspring.profiles.active=prod", "-jar", "webapp-runner.jar", "--expand-war", "certificado-digital.war"]
