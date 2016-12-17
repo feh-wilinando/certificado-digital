@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/assets/css/bootstrap-select.min.css"/>
     <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link href="http://www.prac.com.br/site/templates/interdevice_protostar/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
     <title>Certificado Digital</title>
 </head>
 <body>
@@ -19,17 +20,12 @@
                     <img src="http://www.prac.com.br/site/images/logotipo1.jpg" alt="logo"/>
                 </div>
                 <sec:authorize access="isAuthenticated()">
-                <div class="col-md-4 col-xs-12">
+                <div class="col-md-5 col-xs-12">
                     <div class="container-fluid">
                         <ul class="nav nav-pills">
                             <li><a href="/companies/my-account">Meu Cadastro</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Certificados<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="/certificates">Listagem</a></li>
-                                    <li><a href="/certificates/form">Solicitar</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="/certificates">Certificados</a></li>
+                            <li><a href="/certificates/form">Solicitar Coleta</a></li>
                             <li><a href="/logout">Sair</a></li>
                         </ul>
                     </div>
