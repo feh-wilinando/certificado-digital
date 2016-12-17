@@ -32,6 +32,8 @@ public class DuplicatedCompanyRegistrationValidator implements ConstraintValidat
     @Override
     public boolean isValid(CompanyForm companyForm, ConstraintValidatorContext context) {
 
+        if (companyForm.getId() != null) return true;
+
         Optional<Company> companyOptional = repository.findByCompanyRegistration(companyForm.getCompanyRegistration());
 
         boolean isValid = !companyOptional.isPresent();
