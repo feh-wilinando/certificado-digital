@@ -15,7 +15,7 @@
                 </c:if>
                 
                 <fieldset>
-                    <legend>Sistema Prac Certificados</legend>
+                    <legend>Solicitação de Coleta</legend>
 
                     <div class="row">
                         <div class="form-group">
