@@ -28,6 +28,9 @@ public class Address implements Serializable{
     private String complement;
 
     @NotBlank
+    private String neighborhood;
+
+    @NotBlank
     private String city;
 
     @NotNull

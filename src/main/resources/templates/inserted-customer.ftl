@@ -27,11 +27,6 @@
         </tr>
 
         <tr>
-            <#if company.municipalRegistration??  && company.municipalRegistration != "" >
-            <td><strong>Inscrição Municipal:</strong></td>
-            <td>${company.municipalRegistration}</td>
-            </#if>
-
             <#if company.stateRegistration?? && company.stateRegistration != "">
             <td><strong>Inscrição Estadual:</strong></td>
             <td>${company.stateRegistration}</td>
@@ -48,8 +43,8 @@
         <tr>
             <td><strong>Complemento:</strong></td>
             <td>${company.address.complement}</td>
-            <td><strong>CEP:</strong></td>
-            <td>${company.address.zipCode}</td>
+            <td><strong>Bairro:</strong></td>
+            <td>${company.address.neighborhood}</td>
         </tr>
 
         <tr>
@@ -57,7 +52,11 @@
             <td>${company.address.city}</td>
             <td><strong>Estado:</strong></td>
             <td>${company.address.state}</td>
+        </tr>
 
+        <tr>
+            <td><strong>CEP:</strong></td>
+            <td>${company.address.zipCode}</td>
         </tr>
 
         <tr>

@@ -50,22 +50,24 @@
                         <div class="form-group">
 
                             <div class="col-sm-2">
-                                <label for="im">Inscrição Municipal</label>
-                            </div>
-
-                            <div class="col-sm-4">
-                                <form:input id="im" path="municipalRegistration" cssClass="form-control"/>
-                                <form:errors cssClass="text-danger" path="municipalRegistration"/>
-                            </div>
-
-
-                            <div class="col-sm-2">
                                 <label for="ie">Inscrição Estadual</label>
                             </div>
+
                             <div class="col-sm-4">
                                 <form:input id="ie" path="stateRegistration" cssClass="form-control"/>
                                 <form:errors cssClass="text-danger" path="stateRegistration"/>
                             </div>
+
+                            <div class="col-sm-2">
+                                <label for="zipCode">CEP</label>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <form:input id="zipCode" path="address.zipCode"
+                                            cssClass="form-control cep-mask" placeholder="99999-999"/>
+                                <form:errors cssClass="text-danger" path="address.zipCode"/>
+                            </div>
+
                         </div>
                     </div>
 
@@ -105,6 +107,24 @@
                                             placeholder="8º andar"/>
                                 <form:errors cssClass="text-danger" path="address.complement"/>
                             </div>
+
+                            <div class="col-sm-2">
+                                <label for="neighborhood">Bairro</label>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <form:input id="neighborhood" path="address.neighborhood"
+                                            cssClass="form-control" placeholder="Tatuapé"/>
+                                <form:errors cssClass="text-danger" path="address.neighborhood"/>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="form-group">
+
                             <div class="col-sm-2">
                                 <label for="city">Cidade</label>
                             </div>
@@ -114,12 +134,7 @@
                                             placeholder="São Paulo"/>
                                 <form:errors cssClass="text-danger" path="address.city"/>
                             </div>
-                        </div>
-                    </div>
 
-
-                    <div class="row">
-                        <div class="form-group">
                             <div class="col-sm-2">
                                 <label for="state">Estado</label>
                             </div>
@@ -129,14 +144,7 @@
                                 </form:select>
                                 <form:errors cssClass="text-danger" path="address.state"/>
                             </div>
-                            <div class="col-sm-2">
-                                <label for="zipCode">CEP</label>
-                            </div>
-                            <div class="col-sm-4">
-                                <form:input id="zipCode" path="address.zipCode"
-                                            cssClass="form-control cep-mask" placeholder="99999-999"/>
-                                <form:errors cssClass="text-danger" path="address.zipCode"/>
-                            </div>
+
                         </div>
                     </div>
 
@@ -188,7 +196,7 @@
                             </div>
                             <div class="col-sm-4">
                                 <form:input id="phoneNumber" path="phoneNumber"
-                                            cssClass="form-control telefone-mask" placeholder="(99) 9999-9999"/>
+                                            cssClass="form-control telefone-mask" placeholder="(99) 9999-9999 ou 0800 9999-9999"/>
                                 <form:errors cssClass="text-danger" path="phoneNumber"/>
                             </div>
                             <div class="col-sm-2">
