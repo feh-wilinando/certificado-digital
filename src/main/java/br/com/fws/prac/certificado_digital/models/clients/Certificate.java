@@ -23,7 +23,6 @@ public class Certificate implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
     private String invoice;
 
     @NotNull
