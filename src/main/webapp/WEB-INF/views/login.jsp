@@ -14,7 +14,7 @@
                     <template:alert message="${info}"/>
                 </c:if>
                 
-                <fieldset>
+                <fieldset style="margin-top: 3em">
                     <legend>Solicitação de Coleta</legend>
 
                     <div class="row">
@@ -29,13 +29,13 @@
 
                     <div class="form-group">
 
-                        <div class="col-md-7 col-md-offset-5">
+                        <div class="col-md-7 col-md-offset-3">
                             <button class="btn btn-primary btn-block" id="enter" type="submit">Entrar</button>
                         </div>
 
 
 
-                        <div class="col-md-7 col-md-offset-5">
+                        <div class="col-md-7 col-md-offset-3">
                             <a href="/companies/form"> ou cadastrar empresa </a>
                         </div>
 

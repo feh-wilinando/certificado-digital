@@ -15,8 +15,10 @@
 <body>
     <header>
         <nav class="row">
+            <sec:authorize access="isAuthenticated()" var="authenticated"/>
+
             <div class="col-md-12 col-xs-12">
-                <div class="col-md-3 col-xs-12 col-md-offset-4">
+                <div class="col-md-3 col-xs-12 ${authenticated? '':'col-md-offset-4'} ">
                     <img src="http://www.prac.com.br/site/images/logotipo1.jpg" alt="logo"/>
                 </div>
                 <sec:authorize access="isAuthenticated()">
@@ -40,11 +42,11 @@
     <footer
             style="width: 100%; margin: 80px 0px 0px 0px; background: none repeat scroll 0 0 #EBEBEB; box-shadow: 0px -6px 8px 4px rgba(00, 00, 00, 0.2);">
         <div class="container-fluid">
-            <div class="col-md-6 col-xs-12 col-md-offset-3">
+            <div class="col-md-2 col-xs-12">
                     <span
-                            style="background: none repeat scroll 0 0 #4195A0; color: #FFFFFF; display: block; font-size: 12px; margin-bottom: -8px; padding: 2px 8px; width: 178px;">
+                            style="background: none repeat scroll 0 0 #4195A0; color: #FFFFFF; display: block; font-size: 0.7em; margin-bottom: -1em; padding: 2px 8px; width: 178px;">
                         &copy; PRAC - Programa de Responsabilidade Ambiental Compartilhada 2001 -
-                        2016 </span> <br/> Todos os Direitos Reservados.
+                        2016 </span> <br/> <span style="font-size: 0.8em">Todos os Direitos Reservados.</span>
             </div>
         </div>
     </footer>
