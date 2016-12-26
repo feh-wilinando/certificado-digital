@@ -87,7 +87,7 @@ public class CertificateController {
 
         certificateService.persist(certificateRequestForm);
 
-        Message message = new Message("Email enviado com sucesso.", "Seu certificado foi solicitado.", Message.Severity.INFO);
+        Message message = new Message("Email enviado com sucesso.", "Coleta solicitada com sucesso", Message.Severity.INFO);
 
         redirectAttributes.addFlashAttribute("info", message);
 
