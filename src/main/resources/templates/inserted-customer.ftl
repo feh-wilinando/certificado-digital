@@ -6,9 +6,6 @@
 
 <body style="margin: 0 auto; padding: 0 auto; font-family: Arial">
 <header style="width: 100%; margin: auto">
-    <div style="height: 1em; width: 100%; background: #024981;">
-        &nbsp;</div>
-
     <div style="width: 50%; margin: auto">
         <img src="http://www.prac.com.br/site/images/logotipo1.jpg"
              alt="logo">
@@ -91,9 +88,9 @@
         style="width: 100%; margin: 80px 0px 0px 0px; background: none repeat scroll 0 0 #EBEBEB; box-shadow: 0px -6px 8px 4px rgba(00, 00, 00, 0.2);">
     <div style="width: 50%; margin: auto;">
 			<span
-                    style="background: none repeat scroll 0 0 #4195A0; color: #FFFFFF; display: block; font-size: 12px; margin-bottom: -8px; padding: 2px 8px; width: 178px; text-align: center">©
+                    style="background: none repeat scroll 0 0 #4195A0; color: #FFFFFF; display: block; font-size: 9px; margin-bottom: -8px; padding: 2px 8px; width: 178px; text-align: center">©
 				PRAC - Programa de Responsabilidade Ambiental Compartilhada 2001 -
-				2016 </span> <br /> Todos os Direitos Reservados.
+				2016 </span> <br /> <span style="font-size: 10px">Todos os Direitos Reservados.</span>
     </div>
 </footer>
 
