@@ -20,8 +20,7 @@ import java.math.BigDecimal;
 public class CertificateRequestForm implements Form<Certificate>{
 
     private Long id;
-
-    @NotBlank
+    
     private String invoice;
 
     @NotNull
