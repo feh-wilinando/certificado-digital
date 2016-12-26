@@ -22,10 +22,8 @@ public class MailService {
     private String from;
 
 
-    @Value("${certificado-digital.mail.to}")
-    private String to;
 
-    public void send(String body, String subject){
+    public void send(String to, String body, String subject){
 
 
         try {

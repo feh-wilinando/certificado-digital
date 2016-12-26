@@ -28,6 +28,9 @@ public class MailSenderListener {
         @Autowired
         private FreemarkerTemplateComponent freemarker;
 
+        @Value("${certificado-digital.mail.request-certificate.to}")
+        private String to;
+
         @Value("${certificado-digital.mail.request-certificate.subject}")
         private String subject;
 
@@ -38,10 +41,9 @@ public class MailSenderListener {
 
             contents.put("certificate", certificate);
 
-
             String body = freemarker.execute("requested-certificate.ftl", contents);
 
-            mailService.send(body, subject);
+            mailService.send(to, body, subject);
         }
 
     }
@@ -58,6 +60,9 @@ public class MailSenderListener {
         @Value("${certificado-digital.url.base}")
         private String  urlBase;
 
+        @Value("${certificado-digital.mail.inserted-company.to}")
+        private String to;
+
         @Value("${certificado-digital.mail.inserted-company.subject}")
         private String subject;
 
@@ -71,7 +76,7 @@ public class MailSenderListener {
 
             String body = freemarker.execute("inserted-customer.ftl", contents);
 
-            mailService.send(body, subject);
+            mailService.send(to,body, subject);
         }
     }
 
