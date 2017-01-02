@@ -73,6 +73,8 @@ public class CertificateController {
     public ModelAndView form(CertificateRequestForm certificateRequestForm){
         ModelAndView modelAndView = new ModelAndView("/certificates/form");
 
+        certificateService.fillAdditionalData(certificateRequestForm);
+
         modelAndView.addObject("recaptchaPublicKey", recaptchaComponent.getPublicKey());
 
         return modelAndView;

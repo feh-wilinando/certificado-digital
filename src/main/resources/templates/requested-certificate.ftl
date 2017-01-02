@@ -23,45 +23,86 @@
         </tr>
 
         <tr>
-            <td><strong>Quantidade</strong></td>
-            <td>${certificate.quantity}</td>
+            <td><strong>Coleta das</strong></td>
+            <td>${certificate.startingTime}</td>
+            <td><strong>às</strong></td>
+            <td>${certificate.endingTime}</td>
+        </tr>
+
+        <tr>
+            <td><strong>Volume</strong></td>
+            <td>${certificate.volume}</td>
             <td><strong>Peso</strong></td>
             <td>${certificate.weigth?string[",##0.00"]}</td>
         </tr>
 
         <tr>
-            <td><strong>Local de Retirada</strong></td>
-            <td>${certificate.collectionLocation}</td>
+            <td><strong>Carga paletizada e strechada</strong></td>
+            <td>${certificate.palletizedAndStretched?then("Sim", "Não")}</td>
         </tr>
 
         <tr>
-            <td><strong>Empresa:</strong></td>
-            <td colspan="6">${certificate.company.companyName}</td>
+            <td><strong>Solicitante</strong></td>
+            <td colspan="6">${certificate.requester.companyName}</td>
         </tr>
         <tr>
-            <td><strong>CNPJ:</strong></td>
-            <td colspan="6">${certificate.company.companyRegistration}</td>
-        </tr>
-
-        <tr>
-            <td><strong>Nome:</strong></td>
-            <td>${certificate.company.contact.name}</td>
-            <td><strong>Cargo:</strong></td>
-            <td>${certificate.company.contact.jobTitle}</td>
+            <td><strong>CNPJ</strong></td>
+            <td colspan="6">${certificate.requester.companyRegistration}</td>
         </tr>
 
         <tr>
-            <td><strong>E-mail:</strong></td>
-            <td>${certificate.company.contact.email}</td>
+            <td><strong>Contato</strong></td>
+            <td>${certificate.requester.contact.name}</td>
+            <td><strong>Cargo</strong></td>
+            <td>${certificate.requester.contact.jobTitle}</td>
         </tr>
 
         <tr>
-            <td><strong>Telefone:</strong></td>
-            <td>${certificate.company.phoneNumber}</td>
+            <td><strong>E-mail</strong></td>
+            <td>${certificate.requester.contact.email}</td>
+        </tr>
+
+        <tr>
+            <td><strong>Telefone</strong></td>
+            <td>${certificate.requester.phoneNumber}</td>
         </tr>
         <tr>
-            <td><strong>Celular:</strong></td>
-            <td>${certificate.company.cellNumber}</td>
+            <td><strong>Celular</strong></td>
+            <td>${certificate.requester.cellNumber}</td>
+        </tr>
+
+        <tr>
+            <h3>Local de Retirada</h3>
+        </tr>
+        <tr>
+            <td><strong>Empresa</strong></td>
+            <td>${certificate.companyName}</td>
+        </tr>
+
+        <tr>
+            <td><strong>Enredeço</strong></td>
+            <td>${certificate.address.street}</td>
+            <td><strong>Nº</strong></td>
+            <td>${certificate.address.number}</td>
+        </tr>
+
+        <tr>
+            <td><strong>Complemento</strong></td>
+            <td>${certificate.address.complement}</td>
+            <td><strong>Bairro</strong></td>
+            <td>${certificate.address.neighborhood}</td>
+        </tr>
+
+        <tr>
+            <td><strong>Cidade</strong></td>
+            <td>${certificate.address.city}</td>
+            <td><strong>Estado</strong></td>
+            <td>${certificate.address.state}</td>
+        </tr>
+
+        <tr>
+            <td><strong>CEP</strong></td>
+            <td>${certificate.address.zipCode}</td>
         </tr>
 
 

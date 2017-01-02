@@ -40,9 +40,7 @@ public class CertificateService {
 
     public void persist(CertificateRequestForm certificateRequestForm){
 
-        String companyRegistration = request.getUserPrincipal().getName();
-
-        Optional<Company> companyOptional = companyRepository.findByCompanyRegistration(companyRegistration);
+        Optional<Company> companyOptional = getCurrentCompany();
 
         if (companyOptional.isPresent()) {
 
@@ -55,7 +53,7 @@ public class CertificateService {
                 certificate = new Certificate();
             }
 
-            certificate.setCompany(companyOptional.get());
+            certificate.setRequester(companyOptional.get());
 
             certificateRequestForm.to(certificate);
 
@@ -69,18 +67,16 @@ public class CertificateService {
 
 
     public List<Certificate> listAllByCurrentCompany(){
-        String companyRegistration = request.getUserPrincipal().getName();
-
-
-        Optional<Company> company = companyRepository.findByCompanyRegistration(companyRegistration);
+        Optional<Company> company = getCurrentCompany();
 
         if(company.isPresent()) {
-            return repository.findAllByCompany(company.get());
+            return repository.findAllByRequester(company.get());
         }else {
             return Collections.emptyList();
         }
 
     }
+
 
     public Optional<CertificateRequestForm> findById(Long id){
 
@@ -100,4 +96,21 @@ public class CertificateService {
 
     }
 
+    public void fillAdditionalData(CertificateRequestForm certificateRequestForm) {
+        Optional<Company> companyOptional = getCurrentCompany();
+
+        if (companyOptional.isPresent()){
+            Company company = companyOptional.get();
+
+            certificateRequestForm.setCompanyName(company.getCompanyName());
+            certificateRequestForm.setAddress(company.getAddress());
+        }
+    }
+
+
+    private Optional<Company> getCurrentCompany() {
+        String companyRegistration = request.getUserPrincipal().getName();
+
+        return companyRepository.findByCompanyRegistration(companyRegistration);
+    }
 }

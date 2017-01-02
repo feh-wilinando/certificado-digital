@@ -16,7 +16,7 @@ public interface CertificateRepository extends org.springframework.data.reposito
 
     void save(Certificate certificate);
 
-    List<Certificate> findAllByCompany(Company company);
+    List<Certificate> findAllByRequester(Company requester);
 
     Optional<Certificate> findById(Long id);
 

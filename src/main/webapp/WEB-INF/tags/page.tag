@@ -54,6 +54,7 @@
     <script type="text/javascript" src="/assets/js/jquery.mask.min.js"></script>
     <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/assets/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="/assets/js/bootstrap-checkbox.min.js"></script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <script src='/assets/js/application.js'></script>
 </body>

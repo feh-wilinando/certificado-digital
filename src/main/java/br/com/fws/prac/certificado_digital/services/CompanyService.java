@@ -25,7 +25,7 @@ public class CompanyService {
     @Autowired
     private JmsTemplate template;
 
-    @Value("${certificado-digital.mail.queue.company}")
+    @Value("${certificado-digital.mail.queue.requester}")
     private String queue;
 
     public void persist(CompanyForm companyForm) {

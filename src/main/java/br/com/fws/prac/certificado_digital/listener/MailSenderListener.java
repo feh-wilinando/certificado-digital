@@ -66,7 +66,7 @@ public class MailSenderListener {
         @Value("${certificado-digital.mail.inserted-company.subject}")
         private String subject;
 
-        @JmsListener(destination = "queue.mail.sender.company")
+        @JmsListener(destination = "queue.mail.sender.requester")
         public void listener(Company company){
             Map<String, Object> contents = new HashMap<>();
 

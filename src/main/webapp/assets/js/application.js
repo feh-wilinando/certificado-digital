@@ -14,5 +14,13 @@ $(document).ready(function() {
     $('.cep-mask').mask('00000-000');
     $('.telefone-mask').mask(telefoneMaskBehavior, option);
     $('.celular-mask').mask('(00) 0 0000-0000');
+    $('.horario-mask').mask('00:00');
+
+
+    $(':checkbox').checkboxpicker({offLabel: "Não", onLabel: "Sim", onActiveCls: "btn-primary"});
+
+    $("#useRegisteredData").change(function () {
+        $("#additional-data").slideToggle();
+    })
 
 });

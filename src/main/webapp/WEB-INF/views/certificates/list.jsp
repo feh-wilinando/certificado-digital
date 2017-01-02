@@ -20,9 +20,8 @@
                 <table class="table table-responsive table-hover">
                     <thead>
                         <th>Nota Fiscal</th>
-                        <th>Quantidade</th>
+                        <th>Volume</th>
                         <th>Peso</th>
-                        <th>Local de Retirada</th>
                         <th>Data Solicitação</th>
                         <th>Data Emissão</th>
                         <th></th>
@@ -35,9 +34,8 @@
 
                             <tr>
                                 <td>${c.invoice}</td>
-                                <td>${c.quantity}</td>
+                                <td>${c.volume}</td>
                                 <td><fmt:formatNumber value="${c.weigth}" pattern="##0.00"/> </td>
-                                <td>${c.collectionLocation}</td>
                                 <td>
                                     <template:localDate date="${c.requestDate}"/>
                                 </td>
