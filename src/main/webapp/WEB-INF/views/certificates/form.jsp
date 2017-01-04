@@ -102,7 +102,7 @@
                     <div id="additional-data" hidden>
 
                         <fieldset>
-                            <legend>Dados adicionais</legend>
+                            <legend>Local para coleta</legend>
                             <div class="row">
                                 <div class="form-group">
                                     <div class="col-md-3">

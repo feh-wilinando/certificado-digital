@@ -23,7 +23,7 @@
         </tr>
 
         <tr>
-            <td><strong>Coleta das</strong></td>
+            <td><strong>Horário de Retirada</strong></td>
             <td>${certificate.startingTime}</td>
             <td><strong>às</strong></td>
             <td>${certificate.endingTime}</td>
