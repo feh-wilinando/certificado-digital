@@ -210,6 +210,46 @@
 
                                 </div>
                             </div>
+
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-md-3">
+                                        <label for="contact">Contato</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <form:input id="contact" path="contact.name" cssClass="form-control"
+                                                    placeholder="João da Silva"/>
+                                        <form:errors cssClass="text-danger" path="contact.name"/>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="form-group">
+
+                                    <div class="col-md-3">
+                                        <label for="email">E-mail</label>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <form:input id="email" path="contact.email" cssClass="form-control" type="email"
+                                                    placeholder="joao.silva@email.com"/>
+                                        <form:errors cssClass="text-danger" path="contact.email"/>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <label for="jobTitle">Cargo</label>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <form:input id="jobTitle" path="contact.jobTitle" cssClass="form-control"
+                                                    placeholder="Gerente, Auxiliar, Analista..."/>
+                                        <form:errors cssClass="text-danger" path="contact.jobTitle"/>
+                                    </div>
+                                </div>
+                            </div>
+
                         </fieldset>
                     </div>
 

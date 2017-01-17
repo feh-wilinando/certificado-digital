@@ -27,7 +27,7 @@
                         <ul class="nav nav-pills">
                             <li><a href="/companies/my-account">Meu Cadastro</a></li>
                             <li><a href="/certificates">Certificados</a></li>
-                            <li><a href="/certificates/form">Solicitar Coleta</a></li>
+                            <li><a href="/certificates/form/">Solicitar Coleta</a></li>
                             <li><a href="/logout">Sair</a></li>
                         </ul>
                     </div>

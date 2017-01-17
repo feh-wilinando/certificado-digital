@@ -3,6 +3,7 @@ package br.com.fws.prac.certificado_digital.models.forms;
 import br.com.fws.prac.certificado_digital.models.clients.Certificate;
 import br.com.fws.prac.certificado_digital.models.clients.Company;
 import br.com.fws.prac.certificado_digital.models.commons.Address;
+import br.com.fws.prac.certificado_digital.models.commons.Contact;
 import br.com.fws.prac.certificado_digital.repositories.CompanyRepository;
 import br.com.fws.prac.certificado_digital.validators.UseRecaptcha;
 import lombok.Data;
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.NumberFormat;
 
 import javax.annotation.PostConstruct;
+import javax.persistence.Embedded;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
@@ -59,6 +61,8 @@ public class CertificateRequestForm implements Form<Certificate>{
     @NotNull
     private Boolean useRegisteredData;
 
+    @Valid
+    private Contact contact = new Contact();
 
     @Override
     public void from(Certificate entity) {
@@ -71,6 +75,7 @@ public class CertificateRequestForm implements Form<Certificate>{
         this.palletizedAndStretched = entity.isPalletizedAndStretched();
         this.companyName = entity.getCompanyName();
         this.address = entity.getAddress();
+        this.contact = entity.getContact();
     }
 
     @Override
@@ -84,8 +89,27 @@ public class CertificateRequestForm implements Form<Certificate>{
         entity.setPalletizedAndStretched(palletizedAndStretched);
         entity.setCompanyName(companyName);
         entity.setAddress(address);
+        entity.setContact(contact);
 
     }
 
+    public void inflate(Optional<CertificateRequestForm> formOptional){
+        if (formOptional.isPresent()){
+
+            CertificateRequestForm form = formOptional.get();
+
+            this.id = form.getId();
+            this.invoice = form.getInvoice();
+            this.volume = form.getVolume();
+            this.weigth = form.getWeigth();
+            this.startingTime = form.getStartingTime();
+            this.endingTime = form.getEndingTime();
+            this.palletizedAndStretched = form.getPalletizedAndStretched();
+            this.companyName = form.getCompanyName();
+            this.address = form.getAddress();
+            this.contact = form.getContact();
+
+        }
+    }
 
 }

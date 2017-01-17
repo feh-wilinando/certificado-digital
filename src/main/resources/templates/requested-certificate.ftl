@@ -105,6 +105,18 @@
             <td>${certificate.address.zipCode}</td>
         </tr>
 
+        <tr>
+            <td><strong>Nome:</strong></td>
+            <td>${certificate.contact.name}</td>
+            <td><strong>Cargo:</strong></td>
+            <td>${certificate.contact.jobTitle}</td>
+        </tr>
+
+
+        <tr>
+            <td><strong>E-mail:</strong></td>
+            <td>${certificate.contact.email}</td>
+        </tr>
 
     </table>
 

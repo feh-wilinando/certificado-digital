@@ -104,6 +104,7 @@ public class CertificateService {
 
             certificateRequestForm.setCompanyName(company.getCompanyName());
             certificateRequestForm.setAddress(company.getAddress());
+            certificateRequestForm.setContact(company.getContact());
         }
     }
 

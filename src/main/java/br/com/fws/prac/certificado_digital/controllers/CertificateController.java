@@ -47,47 +47,32 @@ public class CertificateController {
 
 
 
-    @GetMapping("/form/{id}")
-    public ModelAndView form(@PathVariable("id") Long id , Model model, RedirectAttributes redirectAttributes){
+    @GetMapping({"/form","/form/{id}"})
+    public ModelAndView form(@PathVariable("id") Optional<Long> optionalId , CertificateRequestForm form){
 
-        Optional<CertificateRequestForm> formOptional = certificateService.findById(id);
-
-
-        if (formOptional.isPresent()) {
-
-            CertificateRequestForm certificateRequestForm = formOptional.get();
-
-            model.addAttribute("certificateRequestForm", certificateRequestForm);
-
-            return form(certificateRequestForm);
+        if (optionalId.isPresent()) {
+            Optional<CertificateRequestForm> formOptional = certificateService.findById(optionalId.get());
+            form.inflate(formOptional);
+        }else {
+            certificateService.fillAdditionalData(form);
         }
 
-        Message message = new Message("Certificado não localizado", "Não foi possível localizar um certificado com o id " + id, Message.Severity.DANGER);
-
-        redirectAttributes.addFlashAttribute("message", message);
-
-        return new ModelAndView("redirect:/certificates");
-    }
-
-    @GetMapping("/form")
-    public ModelAndView form(CertificateRequestForm certificateRequestForm){
         ModelAndView modelAndView = new ModelAndView("/certificates/form");
-
-        certificateService.fillAdditionalData(certificateRequestForm);
 
         modelAndView.addObject("recaptchaPublicKey", recaptchaComponent.getPublicKey());
 
         return modelAndView;
+
     }
 
     @PostMapping("/form")
-    public ModelAndView save(@Valid CertificateRequestForm certificateRequestForm, BindingResult result, RedirectAttributes redirectAttributes){
+    public ModelAndView save(@Valid CertificateRequestForm form, BindingResult result, RedirectAttributes redirectAttributes){
 
         if (result.hasErrors()){
-            return form(certificateRequestForm);
+            return form(Optional.ofNullable(form.getId()),form);
         }
 
-        certificateService.persist(certificateRequestForm);
+        certificateService.persist(form);
 
         Message message = new Message("Email enviado com sucesso.", "Coleta solicitada com sucesso", Message.Severity.INFO);
 

@@ -1,6 +1,7 @@
 package br.com.fws.prac.certificado_digital.models.clients;
 
 import br.com.fws.prac.certificado_digital.models.commons.Address;
+import br.com.fws.prac.certificado_digital.models.commons.Contact;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.NotBlank;
@@ -57,6 +58,11 @@ public class Certificate implements Serializable {
     @NotNull
     @Column(columnDefinition="BOOLEAN DEFAULT false")
     private boolean palletizedAndStretched;
+
+    @NotNull
+    @Embedded
+    @Valid
+    private Contact contact = new Contact();
 
     @PrePersist @PreUpdate
     public void preSaveOrUpdate(){
