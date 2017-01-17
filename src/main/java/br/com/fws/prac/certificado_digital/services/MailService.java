@@ -1,5 +1,6 @@
 package br.com.fws.prac.certificado_digital.services;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -21,10 +22,12 @@ public class MailService {
     @Value("${certificado-digital.mail.from}")
     private String from;
 
-
+    private Logger logger = Logger.getLogger(MailService.class);
 
     public void send(String to, String body, String subject){
 
+        String msg = String.format("Sending mail from %s, to %s and with subject %s",from, to, subject);
+        logger.info(msg);
 
         try {
 
