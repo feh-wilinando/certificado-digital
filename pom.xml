@@ -5,7 +5,7 @@
 
     <groupId>br.com.fws.prac</groupId>
     <artifactId>certificado-digital</artifactId>
-    <version>1.4</version>
+    <version>1.6</version>
     <packaging>war</packaging>
 
     <name>certificado-digital</name>

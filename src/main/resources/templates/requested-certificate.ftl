@@ -70,10 +70,17 @@
             <td><strong>Celular</strong></td>
             <td>${certificate.requester.cellNumber}</td>
         </tr>
+    </table>
+    <br/>
 
+    <table>
         <tr>
             <h3>Local de Retirada</h3>
         </tr>
+    </table>
+
+    <br/>
+    <table>
         <tr>
             <td><strong>Empresa</strong></td>
             <td>${certificate.companyName}</td>
